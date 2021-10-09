@@ -165,4 +165,5 @@ const searchPersonByCityOrState = (value) => {
     return addressBookArr.filter(contact => (contact.state === value || contact.city === value))
 }
 
-console.log(searchPersonByCityOrState("Karur"))
+console.log("All contacts is Karur : ")
+searchPersonByCityOrState("Karur").forEach(contact => console.log(contact.firstName))
