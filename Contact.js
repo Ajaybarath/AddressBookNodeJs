@@ -112,3 +112,14 @@ try {
 catch (e) {
     console.error(e)
 }
+
+let addressBookArr = new Array();
+
+
+var contact1 = new Contact("Ajay", "Barath", "Velayuthampalayam", "Karur", "Tamil Nadu", 639117, "91 9965775758", "abc.sfdg@bl.co.in")
+let contact2 = new Contact("Mark", "Zebra", "Velayuthampalayam", "Karur", "Tamil Nadu", 639117, "91 9080225869", "abc.sdfsdg@bl.co.in")
+let contact3 = new Contact("Jack", "Rech", "Velayuthampalayam", "Salem", "Tamil Nadu", 639106, "91 9080223469", "abc.ssdfgg@bl.co.in")
+
+addressBookArr.push(contact1)
+addressBookArr.push(contact2)
+addressBookArr.push(contact3)
