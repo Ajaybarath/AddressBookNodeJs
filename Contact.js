@@ -183,3 +183,18 @@ const sortContactByName = () => {
 sortContactByName();
 console.log("Sorted contacts: " + addressBookArr)
 
+const sortContactByCityStateZip = () => {
+    addressBookArr.sort((contact1, contact2) => {
+        return contact1.city.localeCompare(contact2.city)
+    })
+    .sort((contact1, contact2) => {
+        return contact1.state.localeCompare(contact2.state)
+    })
+    .sort((contact1, contact2) => {
+        return contact1.zip - contact2.zip
+    })
+}
+
+sortContactByCityStateZip();
+console.log("Sorted contacts by city state zip: " + addressBookArr)
+
