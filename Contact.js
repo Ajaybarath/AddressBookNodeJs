@@ -123,10 +123,11 @@ addressBookArr.push(contact1)
 addressBookArr.push(contact2)
 addressBookArr.push(contact3)
 
-let updatedContact = new Contact("Jack", "Recfsh", "Alamth", "Salem", "Kerla", 639106, "91 9080223469", "abc.ssdfgg@bl.co.in")
+let updatedContact = new Contact("Mark", "Zecoss", "Velayuthampalayam", "Karur", "Tamil Nadu", 639117, "91 9080225869", "abc.sdfsdg@bl.co.in")
 
 
-addressBookArr.filter(contact => contact.firstName === updatedContact.firstName)
+const findByNameAndUpdate = (updatedContact) => {
+    addressBookArr.filter(contact => contact.firstName === updatedContact.firstName)
     .forEach((contact) => {
         let index = addressBookArr.findIndex((c) => c.firstName === contact.firstName)
         console.log(index)
@@ -134,7 +135,14 @@ addressBookArr.filter(contact => contact.firstName === updatedContact.firstName)
             addressBookArr[index] = updatedContact;
         }
     })
+}
+findByNameAndUpdate(updatedContact)
 
-// findByNameAndUpdate(updatedContact)
+const deleteContactByName = (name) => {
+    addressBookArr = addressBookArr.filter(contact => contact.firstName !== name)
+}
+deleteContactByName("Ajay")
 
 console.log(addressBookArr)
+
+
