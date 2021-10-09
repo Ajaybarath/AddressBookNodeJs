@@ -173,3 +173,13 @@ const getCountOfPersonInStateOrCity = (value) => {
 }
 
 console.log("Number of contacts is Karur : " + getCountOfPersonInStateOrCity("Karur"))
+
+const sortContactByName = () => {
+    addressBookArr.sort((contact1, contact2) => {
+        return contact1.firstName.localeCompare(contact2.firstName)
+    })
+}
+
+sortContactByName();
+console.log("Sorted contacts: " + addressBookArr)
+
