@@ -11,28 +11,28 @@ class Contact {
         this.email = params[7];
     }
 
-    get firstName(){
+    get firstName() {
         return this._firstName;
     }
-    get lastName(){
+    get lastName() {
         return this._lastName;
     }
-    get address(){
+    get address() {
         return this._address;
     }
-    get city(){
+    get city() {
         return this._city;
     }
-    get state(){
+    get state() {
         return this._state;
     }
-    get zip(){
+    get zip() {
         return this._zip;
     }
-    get phone(){
+    get phone() {
         return this._phone;
     }
-    get email(){
+    get email() {
         return this._email;
     }
 
@@ -91,7 +91,7 @@ class Contact {
         }
         else throw "Enter valid phone"
     }
-    
+
     set email(email) {
         let emailRegex = RegExp('([a][b][c][.]?){1}([a-zA-Z]{3,})?[@]([b][l][.][c][o][.]?[i]?[n]?)');
         if (emailRegex.test(email)) {
@@ -115,7 +115,6 @@ catch (e) {
 
 let addressBookArr = new Array();
 
-
 var contact1 = new Contact("Ajay", "Barath", "Velayuthampalayam", "Karur", "Tamil Nadu", 639117, "91 9965775758", "abc.sfdg@bl.co.in")
 let contact2 = new Contact("Mark", "Zebra", "Velayuthampalayam", "Karur", "Tamil Nadu", 639117, "91 9080225869", "abc.sdfsdg@bl.co.in")
 let contact3 = new Contact("Jack", "Rech", "Velayuthampalayam", "Salem", "Tamil Nadu", 639106, "91 9080223469", "abc.ssdfgg@bl.co.in")
@@ -123,3 +122,19 @@ let contact3 = new Contact("Jack", "Rech", "Velayuthampalayam", "Salem", "Tamil 
 addressBookArr.push(contact1)
 addressBookArr.push(contact2)
 addressBookArr.push(contact3)
+
+let updatedContact = new Contact("Jack", "Recfsh", "Alamth", "Salem", "Kerla", 639106, "91 9080223469", "abc.ssdfgg@bl.co.in")
+
+
+addressBookArr.filter(contact => contact.firstName === updatedContact.firstName)
+    .forEach((contact) => {
+        let index = addressBookArr.findIndex((c) => c.firstName === contact.firstName)
+        console.log(index)
+        if (index !== -1) {
+            addressBookArr[index] = updatedContact;
+        }
+    })
+
+// findByNameAndUpdate(updatedContact)
+
+console.log(addressBookArr)
