@@ -167,3 +167,9 @@ const searchPersonByCityOrState = (value) => {
 
 console.log("All contacts is Karur : ")
 searchPersonByCityOrState("Karur").forEach(contact => console.log(contact.firstName))
+
+const getCountOfPersonInStateOrCity = (value) => {
+    return searchPersonByCityOrState(value).length
+}
+
+console.log("Number of contacts is Karur : " + getCountOfPersonInStateOrCity("Karur"))
