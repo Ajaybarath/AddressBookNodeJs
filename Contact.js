@@ -119,9 +119,19 @@ var contact1 = new Contact("Ajay", "Barath", "Velayuthampalayam", "Karur", "Tami
 let contact2 = new Contact("Mark", "Zebra", "Velayuthampalayam", "Karur", "Tamil Nadu", 639117, "91 9080225869", "abc.sdfsdg@bl.co.in")
 let contact3 = new Contact("Jack", "Rech", "Velayuthampalayam", "Salem", "Tamil Nadu", 639106, "91 9080223469", "abc.ssdfgg@bl.co.in")
 
-addressBookArr.push(contact1)
-addressBookArr.push(contact2)
-addressBookArr.push(contact3)
+const addContact = (newContact) => {
+    if (addressBookArr.filter(contact => contact.firstName === newContact.firstName).length == 0) {
+        addressBookArr.push(newContact)
+    }
+    else {
+        throw "Contact already exists!"
+    }
+}
+
+addContact(contact1);
+addContact(contact2);
+addContact(contact3);
+
 
 let updatedContact = new Contact("Mark", "Zecoss", "Velayuthampalayam", "Karur", "Tamil Nadu", 639117, "91 9080225869", "abc.sdfsdg@bl.co.in")
 
