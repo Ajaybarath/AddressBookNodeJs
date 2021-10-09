@@ -128,13 +128,13 @@ let updatedContact = new Contact("Mark", "Zecoss", "Velayuthampalayam", "Karur",
 
 const findByNameAndUpdate = (updatedContact) => {
     addressBookArr.filter(contact => contact.firstName === updatedContact.firstName)
-    .forEach((contact) => {
-        let index = addressBookArr.findIndex((c) => c.firstName === contact.firstName)
-        console.log(index)
-        if (index !== -1) {
-            addressBookArr[index] = updatedContact;
-        }
-    })
+        .forEach((contact) => {
+            let index = addressBookArr.findIndex((c) => c.firstName === contact.firstName)
+            console.log(index)
+            if (index !== -1) {
+                addressBookArr[index] = updatedContact;
+            }
+        })
 }
 findByNameAndUpdate(updatedContact)
 
@@ -144,5 +144,10 @@ const deleteContactByName = (name) => {
 deleteContactByName("Ajay")
 
 console.log(addressBookArr)
+
+const getCount = () => addressBookArr.length;
+
+
+console.log("No of contact is : " + getCount())
 
 
