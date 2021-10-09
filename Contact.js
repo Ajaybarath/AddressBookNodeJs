@@ -152,6 +152,7 @@ const deleteContactByName = (name) => {
     addressBookArr = addressBookArr.filter(contact => contact.firstName !== name)
 }
 deleteContactByName("Ajay")
+addContact(contact1);
 
 console.log(addressBookArr)
 
@@ -160,4 +161,8 @@ const getCount = () => addressBookArr.length;
 
 console.log("No of contact is : " + getCount())
 
+const searchPersonByCityOrState = (value) => {
+    return addressBookArr.filter(contact => (contact.state === value || contact.city === value))
+}
 
+console.log(searchPersonByCityOrState("Karur"))
